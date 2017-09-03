@@ -1,0 +1,142 @@
+<task compile_id='1960' method='au/com/energyaustralia/q2/dao/JdbcConfigurationDao$1 processRow (Ljava/sql/ResultSet;)V' bytes='48' count='1054' iicount='1054' level='3' stamp='4.643'>
+  <phase name='buildIR' stamp='4.643'>
+    <type id='711' name='void'/>
+    <klass id='820' name='java/sql/ResultSet' flags='1537'/>
+    <klass id='819' name='au/com/energyaustralia/q2/dao/JdbcConfigurationDao$1' flags='0'/>
+    <method id='821' holder='819' name='processRow' return='711' arguments='820' flags='1' bytes='48' iicount='1055'/>
+    <parse method='821' stamp='4.643'>
+      <bc code='185' bci='3'/>
+      <klass id='717' name='java/lang/String' flags='17'/>
+      <method id='826' holder='820' name='getString' return='717' arguments='717' flags='1025' bytes='0' iicount='1'/>
+      <call method='826' instr='invokeinterface'/>
+      <inline_fail reason='no static binding'/>
+      <bc code='184' bci='10'/>
+      <type id='703' name='boolean'/>
+      <klass id='827' name='org/springframework/util/StringUtils' flags='1025'/>
+      <method id='828' holder='827' name='hasText' return='703' arguments='717' flags='9' bytes='5' compile_id='1151' compiler='C1' level='3' iicount='2880'/>
+      <call method='828' instr='invokestatic'/>
+      <inline_success reason='receiver is statically known'/>
+      <parse method='828'>
+        <bc code='184' bci='1'/>
+        <klass id='830' name='java/lang/CharSequence' flags='1537'/>
+        <method id='831' holder='827' name='hasText' return='703' arguments='830' flags='9' bytes='46' compile_id='1152' compiler='C1' level='3' iicount='2882'/>
+        <call method='831' instr='invokestatic'/>
+        <inline_fail reason='callee is too large'/>
+        <parse_done stamp='4.644'/>
+      </parse>
+      <bc code='185' bci='19'/>
+      <call method='826' instr='invokeinterface'/>
+      <inline_fail reason='no static binding'/>
+      <bc code='184' bci='31'/>
+      <call method='828' instr='invokestatic'/>
+      <inline_success reason='receiver is statically known'/>
+      <parse method='828'>
+        <bc code='184' bci='1'/>
+        <call method='831' instr='invokestatic'/>
+        <inline_fail reason='callee is too large'/>
+        <parse_done stamp='4.644'/>
+      </parse>
+      <bc code='182' bci='43'/>
+      <klass id='824' name='com/google/common/collect/ImmutableMap$Builder' flags='9'/>
+      <klass id='716' name='java/lang/Object' flags='1'/>
+      <method id='835' holder='824' name='put' return='824' arguments='716 716' flags='1' bytes='35' compile_id='1779' compiler='C1' level='3' iicount='1071'/>
+      <call method='835' instr='invokevirtual'/>
+      <dependency type='leaf_type' ctxk='824'/>
+      <inline_success reason='receiver is statically known'/>
+      <dependency type='leaf_type' ctxk='824'/>
+      <parse method='835'>
+        <bc code='183' bci='7'/>
+        <type id='709' name='int'/>
+        <method id='838' holder='824' name='ensureCapacity' return='711' arguments='709' flags='2' bytes='33' compile_id='1780' compiler='C1' level='3' iicount='1071'/>
+        <call method='838' instr='invokespecial'/>
+        <dependency type='leaf_type' ctxk='824'/>
+        <inline_fail reason='callee is too large'/>
+        <bc code='184' bci='12'/>
+        <klass id='837' name='com/google/common/collect/ImmutableMapEntry$TerminalEntry' flags='24'/>
+        <klass id='840' name='com/google/common/collect/ImmutableMap' flags='1025'/>
+        <method id='841' holder='840' name='entryOf' return='837' arguments='716 716' flags='8' bytes='15' compile_id='1781' compiler='C1' level='3' iicount='1071'/>
+        <call method='841' instr='invokestatic'/>
+        <inline_success reason='receiver is statically known'/>
+        <parse method='841'>
+          <bc code='184' bci='2'/>
+          <klass id='843' name='com/google/common/collect/CollectPreconditions' flags='16'/>
+          <method id='844' holder='843' name='checkEntryNotNull' return='711' arguments='716 716' flags='8' bytes='98' compile_id='1589' compiler='C1' level='3' iicount='2142'/>
+          <call method='844' instr='invokestatic'/>
+          <inline_fail reason='callee is too large'/>
+          <bc code='183' bci='11'/>
+          <method id='846' holder='837' name='&lt;init&gt;' return='711' arguments='716 716' flags='0' bytes='7' iicount='1071'/>
+          <call method='846' instr='invokespecial'/>
+          <inline_success reason='receiver is statically known'/>
+          <parse method='846'>
+            <bc code='183' bci='3'/>
+            <klass id='848' name='com/google/common/collect/ImmutableMapEntry' flags='1024'/>
+            <method id='849' holder='848' name='&lt;init&gt;' return='711' arguments='716 716' flags='0' bytes='12' iicount='1071'/>
+            <call method='849' instr='invokespecial'/>
+            <inline_success reason='receiver is statically known'/>
+            <parse method='849'>
+              <bc code='183' bci='3'/>
+              <klass id='851' name='com/google/common/collect/ImmutableEntry' flags='0'/>
+              <method id='852' holder='851' name='&lt;init&gt;' return='711' arguments='716 716' flags='0' bytes='15' compile_id='1635' compiler='C1' level='3' iicount='1603'/>
+              <call method='852' instr='invokespecial'/>
+              <inline_success reason='receiver is statically known'/>
+              <parse method='852'>
+                <bc code='183' bci='1'/>
+                <klass id='854' name='com/google/common/collect/AbstractMapEntry' flags='1024'/>
+                <method id='855' holder='854' name='&lt;init&gt;' return='711' flags='0' bytes='5' iicount='1603'/>
+                <call method='855' instr='invokespecial'/>
+                <inline_success reason='receiver is statically known'/>
+                <parse method='855'>
+                  <bc code='183' bci='1'/>
+                  <method id='857' holder='716' name='&lt;init&gt;' return='711' flags='1' bytes='1' compile_id='31' compiler='C1' level='1' iicount='220319'/>
+                  <call method='857' instr='invokespecial'/>
+                  <inline_success reason='receiver is statically known'/>
+                  <parse method='857'>
+                    <parse_done stamp='4.644'/>
+                  </parse>
+                  <parse_done stamp='4.644'/>
+                </parse>
+                <parse_done stamp='4.644'/>
+              </parse>
+              <bc code='184' bci='8'/>
+              <call method='844' instr='invokestatic'/>
+              <inline_fail reason='callee is too large'/>
+              <parse_done stamp='4.644'/>
+            </parse>
+            <parse_done stamp='4.644'/>
+          </parse>
+          <parse_done stamp='4.644'/>
+        </parse>
+        <parse_done stamp='4.644'/>
+      </parse>
+      <parse_done stamp='4.644'/>
+    </parse>
+    <phase name='optimize_blocks' stamp='4.644'>
+      <phase_done name='optimize_blocks' stamp='4.644'/>
+    </phase>
+    <phase name='rangeCheckElimination' stamp='4.644'>
+      <phase_done name='rangeCheckElimination' stamp='4.644'/>
+    </phase>
+    <phase name='optimize_null_checks' stamp='4.644'>
+      <phase_done name='optimize_null_checks' stamp='4.644'/>
+    </phase>
+    <phase_done name='buildIR' stamp='4.644'/>
+  </phase>
+  <phase name='emit_lir' stamp='4.644'>
+    <phase name='lirGeneration' stamp='4.644'>
+      <phase_done name='lirGeneration' stamp='4.644'/>
+    </phase>
+    <phase name='linearScan' stamp='4.644'>
+      <phase_done name='linearScan' stamp='4.644'/>
+    </phase>
+    <phase_done name='emit_lir' stamp='4.644'/>
+  </phase>
+  <phase name='codeemit' stamp='4.644'>
+    <phase_done name='codeemit' stamp='4.644'/>
+  </phase>
+  <phase name='codeinstall' stamp='4.644'>
+    <dependency type='leaf_type' ctxk='824'/>
+    <phase_done name='codeinstall' stamp='4.644'/>
+  </phase>
+  <code_cache total_blobs='2372' nmethods='1949' adapters='336' free_code_cache='244442688'/>
+  <task_done success='1' nmsize='2600' count='1056' inlined_bytes='100' stamp='4.644'/>
+</task>

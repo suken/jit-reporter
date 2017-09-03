@@ -1,0 +1,53 @@
+<div class="ui-g summary-panel"  *ngIf="summary">
+  <div class="ui-g-4">
+    <p-panel header="Compiled method">
+      <div class="ui-g">
+        <div class="ui-g-3">
+          <i class="fa fa-th-large fa-5x" style="color: #3984b8;"></i>
+        </div>
+        <div class="ui-g-9 summary-card-details">
+          <ul>
+            <li>Total {{summary.totalCompiledMethods}}</li>
+            <li>C1 compiled {{summary.c1CompiledMethods}}</li>
+            <li>C2 compiled {{summary.c2CompiledMethods}}</li>
+          </ul>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+  <div class="ui-g-4">
+    <p-panel header="Popular Packages">
+      <div class="ui-g">
+        <div class="ui-g-3">
+          <i class="fa fa-folder fa-5x" style="color: #39b8b6;"></i>
+        </div>
+        <div class="ui-g-9 summary-card-details">
+          <ul>
+            <li>{{summary.popularPackages[0].name}} : {{summary.popularPackages[0].methods}}</li>
+            <li>{{summary.popularPackages[1].name}} : {{summary.popularPackages[1].methods}}</li>
+            <li>{{summary.popularPackages[2].name}} : {{summary.popularPackages[2].methods}}</li>
+            <li>{{summary.popularPackages[3].name}} : {{summary.popularPackages[3].methods}}</li>
+            <li>{{summary.popularPackages[4].name}} : {{summary.popularPackages[4].methods}}</li>
+          </ul>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+  <div class="ui-g-4">
+    <p-panel header="Tiered levels">
+      <div class="ui-g">
+        <div class="ui-g-3">
+          <i class="fa fa-bars fa-5x" style="color: #7e8dcd;"></i>
+        </div>
+        <div class="ui-g-9 summary-card-details">
+          <ul>
+            <li>Level 1 {{summary.level1Methods}}</li>
+            <li>Level 2 {{summary.level2Methods}}</li>
+            <li>Level 3 {{summary.level3Methods}}</li>
+            <li>Level 4 {{summary.level4Methods}}</li>
+          </ul>
+        </div>
+      </div>
+    </p-panel>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="ui-g" *ngIf="packages">
+  <p-dataGrid [value]="packages">
+    <ng-template let-package pTemplate="item">
+      <div class="ui-g-12 ui-md-3">
+        <i class="fa fa-folder fa-2x"></i> <u>{{package.name}}</u> <span style="font-size: 18px; font-weight: bold">{{package.methods}}</span>
+      </div>
+    </ng-template>
+  </p-dataGrid>
+</div>

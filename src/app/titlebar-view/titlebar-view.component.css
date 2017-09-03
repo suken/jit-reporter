@@ -1,0 +1,72 @@
+.top-panel {
+  background-color: #545b61;
+  color: #ffffff;
+  font-size: 20px;
+  height: 5%;
+}
+
+.top-panel-logo {
+  background-color: #2B2B2B;
+  align-content: center;
+}
+
+.top-panel-title {
+  font-size: 28px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+  float: right;
+}
+
+.icon-link {
+  text-decoration: none;
+  color: white;
+}
+
+.profile-pic {
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-top: -8px;
+  border: 2px solid #eee;
+  float: right;
+  cursor: pointer;
+}
+
+.clickable {
+  display: inline;
+  cursor: pointer;
+  background: #68bafc;
+}
+
+.loading-panel {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 48px;
+}
+
+@keyframes dots {
+  50% {
+    transform: translateY(-.4rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.d {
+  animation: dots 1.5s ease-out infinite;
+}
+
+.d-2 {
+  animation-delay: .5s;
+}
+
+.d-3 {
+  animation-delay: 1s;
+}
+

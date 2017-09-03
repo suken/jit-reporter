@@ -1,0 +1,78 @@
+<div class="ui-g top-panel">
+  <div class="ui-g-2 top-panel-logo">
+    <div style="display: inline-block;"><img src="../assets/logo.png" style="height: 50px;"/></div>
+    <div style="display: inline-block"><img src="../assets/title.png" style="height: 38px"/></div>
+  </div>
+  <div class="ui-g-5">
+    <div *ngIf="fileName" style="margin: auto">Inspecting {{fileName}}</div>
+  </div>
+  <div class="ui-g-5">
+    <a class="icon-link" [routerLink]="[{ outlets: { views: ['info'] } }]" title="Info">
+      <span class="fa-stack fa-lg" style="color: #35ae47">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-info fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    <span class="fa-stack fa-lg" (click)="op.show($event)" style="color: #68bafc" title="Upload">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-upload fa-stack-1x fa-inverse"></i>
+    </span>
+    <a class="icon-link" [routerLink]="[{ outlets: { views: ['packages'] } }]" title="Packages">
+      <span class="fa-stack fa-lg" style="color: #f97bb2">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-folder-open fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    <a class="icon-link" [routerLink]="[{ outlets: { views: ['methods'] } }]" title="Methods">
+      <span class="fa-stack fa-lg" style="color: #2086d9">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-list-alt fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    <a class="icon-link" [routerLink]="[{ outlets: { views: ['graphs'] } }]" title="Graphs">
+      <span class="fa-stack fa-lg" style="color: #ff9c59">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-area-chart fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+    <a class="icon-link" href="https://github.com/suken?tab=repositories" target="_blank" title="Github">
+      <span class="fa-stack fa-lg" style="color: #ffd37a">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+    <img class="profile-pic" src="../assets/suken-profile.jpg" (click)="aboutme.show($event)"/>
+  </div>
+</div>
+
+<div class="ui-g loading-panel" *ngIf="loading === true">
+  Loading<span class="d">.</span><span class="d d-2">.</span><span class="d d-3">.</span>
+</div>
+
+<p-overlayPanel #op>
+  <div class="ui-g">
+    <p-fileUpload customUpload="true" (uploadHandler)="uploadLogFile($event, op)" maxFileSize="100000000"></p-fileUpload>
+  </div>
+</p-overlayPanel>
+
+<p-overlayPanel [showCloseIcon]="true" #aboutme>
+  <div style="width: 350px">
+    <div class="ui-g">
+      Suken Shah (Melbourne, Australia)
+    </div>
+    <br>
+    <div class="ui-g">
+      Suken has been pretending to be a good java engineer for last 12 years. He is a big fan of Dr Who and has a floating TARDIS at his desk. One day he hopes to use the TARDIS and travel back in time
+      to fix all file streams that he left open in his code. He has worked in all corners of the Java development universe, including developing swing apps real-time mission critical systems, and web
+      enterprise systems. These days he works as full stack developer and AWS DevOps consultant.
+    </div>
+    <br>
+    <div class="ui-g">
+      Email me: <u>suken.3@gmail.com</u>
+    </div>
+    <br>
+    <div class="ui-g">
+      <a href="https://www.linkedin.com/in/suken-shah-b805b937/">Message me on LinkedIn</a>
+    </div>
+  </div>
+</p-overlayPanel>

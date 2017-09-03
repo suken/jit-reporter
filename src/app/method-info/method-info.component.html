@@ -1,0 +1,51 @@
+<div class="ui-g">
+  <div class="ui-g-2">
+  </div>
+  <div class="ui-g-8">
+    <p-autoComplete [minLength]="3" [inputStyle]="{'width': '900px'}" placeholder="methods.." [suggestions]="searchResults"
+                    (completeMethod)="search($event)" (onSelect)="selectMethod($event)"></p-autoComplete>
+  </div>
+  <div class="ui-g-2">
+  </div>
+</div>
+
+<div class="ui-g" *ngIf="method">
+  <div class="ui-g-3">
+  </div>
+  <div class="ui-g-6">
+    <p-panel header="Visualize">
+      <svg width="100%" height="200">
+        <defs>
+          <marker id="end-arrow" viewBox="0 -5 10 10" refX="6" markerWidth="3" markerHeight="3" orient="auto"><path d="M0,-5L10,0L0,5" fill="#000"></path></marker>
+          <marker id="start-arrow" viewBox="0 -5 10 10" refX="4" markerWidth="3" markerHeight="3" orient="auto"><path d="M10,-5L0,0L10,5" fill="#000"></path></marker>
+        </defs>
+        <g class="link-lines">
+          <line *ngFor="let linkData of links" stroke-width="4px" style="stroke: #000; cursor: pointer; marker-end: url('#end-arrow')"
+                [attr.x1]="linkData.x1" y1="75.00" [attr.x2]="linkData.x2" y2="75.00"></line>
+        </g>
+        <g>
+          <circle r="30" fill="#1f77b4" cx="90.00" cy="75.00"></circle><text class="node-text" x="90.00" y="80.00">0</text>
+        </g>
+        <g *ngFor="let nodeData of nodes">
+          <circle r="30" [attr.fill]="nodeData.color" [attr.cx]="nodeData.x" cy="75.00" (click)="selectLevel(nodeData.title)" style="cursor: pointer"></circle>
+          <text class="node-text" [attr.x]="nodeData.x" y="80.00">{{nodeData.title}}</text>
+        </g>
+      </svg>
+    </p-panel>
+  </div>
+  <div class="ui-g-3">
+  </div>
+</div>
+
+<div class="ui-g" *ngIf="compilerData">
+  <div class="ui-g-2">
+  </div>
+  <div class="ui-g-8">
+    <div *ngIf="compilerData" style="width: 100%">
+      <pre><code class="hljs lang-json" [innerHTML]="compilerData"></code></pre>
+    </div>
+  </div>
+  <div class="ui-g-2">
+  </div>
+</div>
+

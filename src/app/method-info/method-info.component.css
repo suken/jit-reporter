@@ -1,0 +1,16 @@
+.link-line {
+  stroke: #000;
+  stroke-opacity: 0.6;
+  marker-end: url(#end-arrow);
+}
+
+.nodes circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.node-text {
+  text-anchor: middle;
+  font-weight: bold;
+  font-size: 14px;
+}
