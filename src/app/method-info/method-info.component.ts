@@ -32,6 +32,7 @@ export class MethodInfoComponent implements OnInit {
 
   selectMethod(value) {
     this.method = this.jitService.getMethod(value.replace(/\./g, '/'));
+    this.compilerData = null;
     this.links = [];
     this.nodes = [];
     this.updateFlowDiagram();
@@ -67,7 +68,7 @@ export class MethodInfoComponent implements OnInit {
   }
 
   selectLevel(level: number) {
+    this.compilerData = null;
     this.compilerData = hljs.highlightAuto(this.jitService.getCompileTask(this.hasCompilerData(level).id)).value;
-    console.log(this.compilerData);
   }
 }
