@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {JitService} from "../jit.service";
+import {VmInfo} from "../models/vm-info";
+import * as hljs from "highlight.js";
 
 @Component({
   selector: 'app-info-view',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoViewComponent implements OnInit {
 
-  constructor() { }
+
+  private vmInfo: VmInfo;
+  info: string;
+
+  constructor(private jitService: JitService) { }
 
   ngOnInit() {
+    this.vmInfo = this.jitService.getVmInfo();
+    if (this.vmInfo) {
+      this.info = hljs.highlightAuto(JSON.stringify(this.vmInfo, null, 2)).value;
+    }
   }
 
 }

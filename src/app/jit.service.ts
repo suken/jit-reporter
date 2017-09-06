@@ -6,6 +6,7 @@ import {Summary} from "./models/summary";
 import {Nmethod} from "./models/nmethod";
 import {isUndefined} from "util";
 import {CompilerInfo} from "./models/compiler-info";
+import {VmInfo} from "./models/vm-info";
 
 @Injectable()
 export class JitService {
@@ -14,6 +15,7 @@ export class JitService {
 
   private progress: Subject<number> = new Subject<number>();
   private summary: Summary;
+  private vmInfo: VmInfo;
   private methods: Nmethod[];
   private tasks: any[];
   private popularPackages;
@@ -25,12 +27,15 @@ export class JitService {
     this.methods = [];
     this.tasks = [];
     this.popularPackages = null;
+    this.vmInfo = null;
 
     let reader = new FileReader();
     let self = this;
     reader.onload = () => {
+      console.log("Finished reading the file.");
       // this 'text' is the content of the file
       xml2js.parseString(reader.result, function (err, result) {
+        console.log("Finished parsing the file content.");
         self.processSummary(result);
         self.progress.next(100);
       });
@@ -49,6 +54,8 @@ export class JitService {
     this.summary.level3Methods = 0;
     this.summary.level4Methods = 0;
     this.popularPackages = [];
+
+    this.extractVmInfo(data.hotspot_log.vm_version[0], data.hotspot_log.vm_arguments[0]);
 
     let packagesMap = new Map<string, number>();
     let methodsMap = new Map<string, Nmethod>();
@@ -112,6 +119,15 @@ export class JitService {
     data = null;
   }
 
+  private extractVmInfo(version: any, args: any) {
+    this.vmInfo = new VmInfo();
+    this.vmInfo.name = version.name;
+    this.vmInfo.info = version.info;
+    this.vmInfo.release = version.release;
+    this.vmInfo.command = args.command;
+    this.vmInfo.props = args.properties;
+  }
+
   private extractCompilationTaskData(data: any) {
     let compilationThreads: any[] = data.hotspot_log.compilation_log;
     compilationThreads.forEach(compilationThread => {
@@ -163,6 +179,10 @@ export class JitService {
 
   getSummary(): Summary {
     return this.summary;
+  }
+
+  getVmInfo(): VmInfo {
+    return this.vmInfo;
   }
 
   search(query: string): string[] {

@@ -1,3 +1,8 @@
-<p>
-  info-view works!
-</p>
+<div class="ui-g" *ngIf="info">
+  <div class="ui-g-2">
+    VM Info:
+  </div>
+  <div class="ui-g-8">
+    <pre><code class="hljs lang-json" [innerHTML]="info"></code></pre>
+  </div>
+</div>
