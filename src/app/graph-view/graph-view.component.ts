@@ -14,18 +14,21 @@ export class GraphViewComponent implements OnInit {
 
   // chart data
   compilerSummary: any = {
-    labels: ['C1', 'C2'],
-    datasets: [{
-      data: [0, 0],
-      backgroundColor: [
-        "#FF6384",
-        "#36A2EB"
-      ],
-      hoverBackgroundColor: [
-        "#FF6384",
-        "#36A2EB"
-      ]
-    }]
+    labels: ['Compilers'],
+    datasets: [
+      {
+        label: 'C1',
+        backgroundColor: '#FF6384',
+        borderColor: '#FF6384',
+        data: [0]
+      },
+      {
+        label: 'C2',
+        backgroundColor: '#36A2EB',
+        borderColor: '#36A2EB',
+        data: [0]
+      }
+    ]
   };
 
   levelSummary: any = {
@@ -71,7 +74,8 @@ export class GraphViewComponent implements OnInit {
     if (isUndefined(this.data)) {
       return;
     }
-    this.compilerSummary.datasets[0].data = [this.data.c1CompiledMethods, this.data.c2CompiledMethods];
+    this.compilerSummary.datasets[0].data = [this.data.c1CompiledMethods];
+    this.compilerSummary.datasets[1].data = [this.data.c2CompiledMethods];
     this.levelSummary.datasets[0].data = [this.data.level1Methods];
     this.levelSummary.datasets[1].data = [this.data.level2Methods];
     this.levelSummary.datasets[2].data = [this.data.level3Methods];
